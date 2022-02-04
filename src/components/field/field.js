@@ -1,30 +1,16 @@
 import Snake from "../snake/snake";
 import { StyledField } from "./styles";
-import { $keyDown, onKeyDownChange, onSnakePosChange } from "../snake/model";
-import { useEffect } from "react";
-import { useStore } from "effector-react";
+import Food from "../food/food";
+import { useGameStart, useKeyboardListener } from "./hooks";
 
 const Field = () => {
-  const keyDown = useStore($keyDown);
-  useEffect(() => {
-    if (keyDown !== "") {
-      const interval = setInterval(() => {
-        onSnakePosChange(keyDown);
-      }, 50);
-      return () => clearInterval(interval);
-    }
-  }, [keyDown]);
-  useEffect(() => {
-    const cb = (key) => {
-      onKeyDownChange(key);
-    };
-    window.addEventListener("keydown", (event) => cb(event.key), false);
-    return () =>
-      window.removeEventListener("keydown", (event) => cb(event.key), false);
-  }, []);
+  useKeyboardListener();
+  useGameStart();
+
   return (
     <StyledField>
       <Snake />
+      <Food />
     </StyledField>
   );
 };

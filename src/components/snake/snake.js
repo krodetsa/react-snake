@@ -12,7 +12,7 @@ const Snake = () => {
           posX={el.x}
           posY={el.y}
           el={el}
-          key={i}
+          key={i + el}
         ></StyledSnakePart>
       )),
     [position]
