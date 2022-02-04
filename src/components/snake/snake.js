@@ -1,10 +1,24 @@
-import { $snakeState } from "./model";
-import { StyledSnake } from "./styles";
+import { $snakePos } from "./model";
+import { StyledSnakePart } from "./styles";
 import { useStore } from "effector-react";
+import { useMemo } from "react";
 
 const Snake = () => {
-  const snakeState = useStore($snakeState);
-  return <StyledSnake></StyledSnake>;
+  const position = useStore($snakePos);
+  const snake = useMemo(
+    () =>
+      position.map((el, i) => (
+        <StyledSnakePart
+          posX={el.x}
+          posY={el.y}
+          el={el}
+          key={i}
+        ></StyledSnakePart>
+      )),
+    [position]
+  );
+
+  return snake;
 };
 
 export default Snake;

@@ -6,4 +6,6 @@ export const StyledField = styled.div`
   height: 600px;
   margin: 0 auto;
   background-color: #282c34;
+  overflow: hidden;
+  position: relative;
 `;
