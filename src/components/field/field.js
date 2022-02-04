@@ -1,5 +1,12 @@
+import Snake from "../snake/snake";
+import { StyledField } from "./styles";
+
 const Field = () => {
-  return <div>122</div>;
+  return (
+    <StyledField>
+      <Snake />
+    </StyledField>
+  );
 };
 
 export default Field;
