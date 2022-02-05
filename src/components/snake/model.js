@@ -15,7 +15,7 @@ export const $snakePos = createStore([
         y: newStore[newStore.length - 1].y,
         x:
           newStore[newStore.length - 1].x + 8 > 605
-            ? -50
+            ? 0
             : newStore[newStore.length - 1].x + 8,
       });
     }
@@ -25,7 +25,7 @@ export const $snakePos = createStore([
         y: newStore[newStore.length - 1].y,
         x:
           newStore[newStore.length - 1].x - 8 < -5
-            ? 660
+            ? 600
             : newStore[newStore.length - 1].x - 8,
       });
     }
@@ -35,7 +35,7 @@ export const $snakePos = createStore([
         x: newStore[newStore.length - 1].x,
         y:
           newStore[newStore.length - 1].y + 8 > 605
-            ? -50
+            ? 0
             : newStore[newStore.length - 1].y + 8,
       });
     }
@@ -45,7 +45,7 @@ export const $snakePos = createStore([
         x: newStore[newStore.length - 1].x,
         y:
           newStore[newStore.length - 1].y - 8 < -8
-            ? 660
+            ? 600
             : newStore[newStore.length - 1].y - 8,
       });
     }

@@ -2,6 +2,7 @@ import Snake from "../snake/snake";
 import { StyledField } from "./styles";
 import Food from "../food/food";
 import { useGameStart, useKeyboardListener } from "./hooks";
+import Score from "../score";
 
 const Field = () => {
   useKeyboardListener();
@@ -9,6 +10,7 @@ const Field = () => {
 
   return (
     <StyledField>
+      <Score />
       <Snake />
       <Food />
     </StyledField>

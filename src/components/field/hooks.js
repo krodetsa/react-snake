@@ -30,7 +30,7 @@ export const useGameStart = () => {
 
   useEffect(() => {
     checkFoodBorders(snakePos, foodPos) && onFoodPosChange();
-  }, [snakePos.x, snakePos.y]);
+  }, [snakePos, foodPos]);
 };
 
 export const useKeyboardListener = () => {
