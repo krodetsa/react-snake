@@ -4,6 +4,8 @@ Blah blah blah typical React game. Whatever.
 
 Need to update this part. Someday.
 
+Play here - https://react-neon-snake-snake-game.vercel.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
