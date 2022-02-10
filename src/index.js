@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import GameContainer from "./components/snake-game-container/game-container";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<GameContainer />, document.getElementById("root"));

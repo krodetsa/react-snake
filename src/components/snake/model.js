@@ -78,20 +78,3 @@ export const $keyDown = createStore("").on(onKeyDownChange, (store, state) => {
   }
   return direction;
 });
-
-// $snakePos.watch((value) => {
-//   const currentHeadPos = value[value.length - 1];
-//   const currentFoodPos = $foodPos.getState();
-//   // if (
-//   //   currentFoodPos.x === currentHeadPos.x &&
-//   //   currentFoodPos.y === currentHeadPos.y
-//   // ) {
-//   //   console.log(currentHeadPos, currentFoodPos);
-//   //   onFoodPosChange();
-//   // }
-//   if (checkFoodBorders(currentHeadPos, currentFoodPos)) {
-//     console.log(currentHeadPos, currentFoodPos);
-//     onFoodPosChange();
-//   }
-//   // console.log(currentHeadPos, currentFoodPos);
-// });

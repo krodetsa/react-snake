@@ -11,9 +11,7 @@ function getRandomPosition(max, min) {
 }
 export const $foodPos = createStore(getRandomPosition(30, 560)).on(
   onFoodPosChange,
-  () => {
-    return getRandomPosition(30, 560);
-  }
+  () => getRandomPosition(30, 560)
 );
 
 forward({

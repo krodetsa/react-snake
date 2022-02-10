@@ -9,8 +9,8 @@ import {
 } from "../snake/model";
 
 const checkFoodBorders = (head, food) => {
-  const stuntX = head.x - 7 <= food.x && food.x <= head.x + 7;
-  const stuntY = head.y - 7 <= food.y && food.y <= head.y + 7;
+  const stuntX = head.x - 9 <= food.x && food.x <= head.x + 9;
+  const stuntY = head.y - 9 <= food.y && food.y <= head.y + 9;
 
   return stuntX && stuntY;
 };

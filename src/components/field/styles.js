@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledField = styled.div`
   width: 600px;
   height: 600px;
-  margin: 100px auto;
   background-color: #1b1e23;
   overflow: hidden;
   position: relative;
