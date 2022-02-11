@@ -3,6 +3,7 @@ import { StyledField } from "./styles";
 import Food from "../food/food";
 import { useGameStart, useKeyboardListener } from "./hooks";
 import Score from "../score";
+import Pause from "../pause/pause";
 
 const Field = () => {
   useKeyboardListener();
@@ -13,6 +14,7 @@ const Field = () => {
       <Score />
       <Snake />
       <Food />
+      <Pause />
     </StyledField>
   );
 };

@@ -29,4 +29,8 @@ code {
   --purplelight: #fed8ff;
   --purplemidd: #96167a;
   --purpledark: #9c5c8b;
+  --font: rgb(241, 241, 241);
+  --glitch1: #96167a;
+  --glitch2: #0b91ffba;
+  --glitch3: #119718;
 }

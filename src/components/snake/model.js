@@ -76,5 +76,8 @@ export const $keyDown = createStore("").on(onKeyDownChange, (store, state) => {
   if (store !== "ArrowUp" && state === "ArrowDown") {
     direction = state;
   }
+  if (state === "Space") {
+    direction = state;
+  }
   return direction;
 });

@@ -1,5 +1,6 @@
 import { useStore } from "effector-react";
 import { useEffect } from "react";
+import { $pauseStore, onPauseChange } from "../../model/model";
 import { $foodPos, onFoodPosChange } from "../food/model";
 import {
   $keyDown,
@@ -19,11 +20,17 @@ export const useGameStart = () => {
   const keyDown = useStore($keyDown);
   const foodPos = useStore($foodPos);
   const snakePos = useStore($snakePos)[useStore($snakePos).length - 1];
+  const pauseState = useStore($pauseStore);
   useEffect(() => {
     if (keyDown !== "") {
       const interval = setInterval(() => {
         onSnakePosChange(keyDown);
       }, 60);
+      if (keyDown === "Space") {
+        clearInterval(interval);
+        onSnakePosChange(keyDown);
+        onKeyDownChange("Space");
+      }
       return () => clearInterval(interval);
     }
   }, [keyDown]);
@@ -38,7 +45,7 @@ export const useKeyboardListener = () => {
     const cb = (key) => {
       onKeyDownChange(key);
     };
-    window.addEventListener("keydown", (event) => cb(event.key), false);
+    window.addEventListener("keydown", (event) => cb(event.code), false);
     return () =>
       window.removeEventListener("keydown", (event) => cb(event.key), false);
   }, []);
