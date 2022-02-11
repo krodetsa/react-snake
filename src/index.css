@@ -33,4 +33,5 @@ code {
   --glitch1: #96167a;
   --glitch2: #0b91ffba;
   --glitch3: #119718;
-}
+  --semiblack: rgba(32, 32, 32, 0.556);
+} 

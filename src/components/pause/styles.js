@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 export const StyledPauseContainer = styled.div`
   width: 100%;
+  min-width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
+  background: var(--semiblack);
+  transition: 0.5s;
+  opacity: 0.7;
 `;
 
 export const StyledPauseText = styled.div`
