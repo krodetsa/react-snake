@@ -1,7 +1,5 @@
-import { createEvent, createStore } from "effector";
-import { onKeyDownChange } from "../components/snake/model";
-
-export const onPauseChange = createEvent();
+import { createStore } from "effector";
+import { onAddSnakeTail, onKeyDownChange } from "../components/snake/model";
 
 export const $pauseStore = createStore(false).on(
   onKeyDownChange,
@@ -9,3 +7,7 @@ export const $pauseStore = createStore(false).on(
     return keydown === "Space";
   }
 );
+
+export const $difficulty = createStore(60).on(onAddSnakeTail, (store) => {
+  return store - 1;
+});

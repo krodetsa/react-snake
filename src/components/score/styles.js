@@ -8,10 +8,11 @@ export const StyledScoreContainer = styled.div`
   height: 26%;
 `;
 
-export const StyledCounter = styled.div`
+export const StyledCounterContainer = styled.div`
   margin-right: 10%;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 7px 10px;
   color: var(--darkblue);
   z-index: 10;
@@ -21,54 +22,39 @@ export const StyledCounter = styled.div`
     0.2px 0px 2px var(--midd), 0.4px 0px 2px var(--midd),
     0.1px 0px 5px var(--dark), 0.2px 0px 20px var(--dark),
     0.4px 0px 5px var(--dark);
-  & span {
-    color: var(--purpledark);
-    height: 100%;
-    text-shadow: 0.2px 0px 0px var(--purplemidd),
-      0.4px 0px 0px var(--purplemidd), 0.1px 0px 0.1px var(--purplemidd),
-      0.2px 0px 0.1px var(--purplemidd), 0.4px 0px 0.1px var(--purplemidd),
-      0.1px 0px 2px var(--purplemidd), 0.2px 0px 2px var(--purplemidd),
-      0.4px 0px 2px var(--purplemidd), 0.1px 0px 5px var(--purpledark),
-      0.2px 0px 20px var(--purpledark), 0.4px 0px 5px var(--purpledark);
-    animation: ${(props) => (props.counter ? "show-up 1s alternate" : "")};
-    @keyframes show-up {
-      0% {
-        opacity: 0.1;
-        -webkit-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        -moz-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-      }
-      2% {
-        opacity: 1;
-        -webkit-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        -moz-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-      }
-      4% {
-        opacity: 0.9;
-        -webkit-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        -moz-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-      }
+  overflow: hidden;
+`;
+export const StyledCounter = styled.p`
+  color: var(--purpledark);
+  height: 100%;
+  text-shadow: 0.2px 0px 0px var(--purplemidd), 0.4px 0px 0px var(--purplemidd),
+    0.1px 0px 0.1px var(--purplemidd), 0.2px 0px 0.1px var(--purplemidd),
+    0.4px 0px 0.1px var(--purplemidd), 0.1px 0px 2px var(--purplemidd),
+    0.2px 0px 2px var(--purplemidd), 0.4px 0px 2px var(--purplemidd),
+    0.1px 0px 5px var(--purpledark), 0.2px 0px 20px var(--purpledark),
+    0.4px 0px 5px var(--purpledark);
+  transition: 0.4s;
+  position: relative;
+  margin: 0px;
+  margin-left: 3px;
 
-      8% {
-        opacity: 1;
-        -webkit-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        -moz-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-      }
-      70% {
-        opacity: 0.9;
-        -webkit-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        -moz-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-      }
-      100% {
-        opacity: 1;
-        -webkit-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        -moz-box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-        box-shadow: 0px 0px -40px 4px rgba(16, 134, 232, 0.73);
-      }
+  &.qqw {
+    animation: showUp 0.3s;
+  }
+  @keyframes showUp {
+    0% {
+      top: 0px;
+      color: var(--darkblue);
+    }
+    50% {
+      top: 100px;
+    }
+    51% {
+      top: -100px;
+    }
+    100% {
+      top: 0px;
+      color: var(--purpledark);
     }
   }
 `;

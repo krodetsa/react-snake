@@ -1,5 +1,6 @@
 import { useStore } from "effector-react";
 import { useEffect } from "react";
+import { $difficulty } from "../../model/model";
 import { $foodPos, onFoodPosChange } from "../food/model";
 import {
   $keyDown,
@@ -19,11 +20,12 @@ export const useGameStart = () => {
   const keyDown = useStore($keyDown);
   const foodPos = useStore($foodPos);
   const snakePos = useStore($snakePos)[useStore($snakePos).length - 1];
+  const difficulty = useStore($difficulty);
   useEffect(() => {
     if (keyDown !== "") {
       const interval = setInterval(() => {
         onSnakePosChange(keyDown);
-      }, 60);
+      }, difficulty);
       if (keyDown === "Space") {
         clearInterval(interval);
         onSnakePosChange(keyDown);
@@ -31,7 +33,7 @@ export const useGameStart = () => {
       }
       return () => clearInterval(interval);
     }
-  }, [keyDown]);
+  }, [keyDown, difficulty]);
 
   useEffect(() => {
     checkFoodBorders(snakePos, foodPos) && onFoodPosChange();
