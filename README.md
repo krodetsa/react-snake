@@ -1,6 +1,6 @@
 # React Neon Snake Game
 
-Blah blah blah typical React game. Whatever.
+This is React + Effector + Styled components project.
 
 Need to update this part. Someday.
 
