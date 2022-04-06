@@ -14,7 +14,8 @@ export const $snakePos = createStore([
       newStore.push({
         y: newStore[newStore.length - 1].y,
         x:
-          newStore[newStore.length - 1].x + 8 > 605
+          newStore[newStore.length - 1].x + 8 >
+          (window.screen.width > 390 ? 600 : 300)
             ? 0
             : newStore[newStore.length - 1].x + 8,
       });
@@ -25,7 +26,9 @@ export const $snakePos = createStore([
         y: newStore[newStore.length - 1].y,
         x:
           newStore[newStore.length - 1].x - 8 < -5
-            ? 600
+            ? window.screen.width > 390
+              ? 600
+              : 300
             : newStore[newStore.length - 1].x - 8,
       });
     }
@@ -34,7 +37,8 @@ export const $snakePos = createStore([
       newStore.push({
         x: newStore[newStore.length - 1].x,
         y:
-          newStore[newStore.length - 1].y + 8 > 605
+          newStore[newStore.length - 1].y + 8 >
+          (window.screen.width > 390 ? 600 : 300)
             ? 0
             : newStore[newStore.length - 1].y + 8,
       });
@@ -45,7 +49,9 @@ export const $snakePos = createStore([
         x: newStore[newStore.length - 1].x,
         y:
           newStore[newStore.length - 1].y - 8 < -8
-            ? 600
+            ? window.screen.width > 390
+              ? 600
+              : 300
             : newStore[newStore.length - 1].y - 8,
       });
     }

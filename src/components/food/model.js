@@ -9,9 +9,10 @@ function getRandomPosition(max, min) {
     y: Math.floor(Math.random() * (max - min)) + min,
   };
 }
-export const $foodPos = createStore(getRandomPosition(30, 560)).on(
-  onFoodPosChange,
-  () => getRandomPosition(30, 560)
+export const $foodPos = createStore(
+  getRandomPosition(30, window.screen.width > 390 ? 560 : 280)
+).on(onFoodPosChange, () =>
+  getRandomPosition(30, window.screen.width > 390 ? 560 : 280)
 );
 
 forward({

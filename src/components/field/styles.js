@@ -6,12 +6,15 @@ export const StyledField = styled.div`
   background-color: #1b1e23;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 0 0.1vw 0px var(--lightblue), 0 0 0.4vw 0.6vw var(--middblue),
-    0 0 4vw 0.4vw var(--darkblue), inset 0 0 1.5vw 0.4vw var(--darkblue),
-    inset 0 0 0.4vw 0.2vw var(--middblue),
-    inset 0 0 0.5vw 0.2vw var(--lightblue);
+  box-shadow: 0 0 1px 0px var(--lightblue), 0 0 5px 6px var(--middblue),
+    0 0 100px 5px var(--darkblue), inset 0 0 30px 5px var(--darkblue),
+    inset 0 0 5px 2px var(--middblue), inset 0 0 5px 2px var(--lightblue);
   border-radius: 4%;
   animation: border-flicker 7s alternate infinite;
+  @media (min-width: 300px) and (max-width: 1199.98px) {
+    width: 300px;
+    height: 300px;
+  }
   @keyframes border-flicker {
     0% {
       opacity: 0.1;
