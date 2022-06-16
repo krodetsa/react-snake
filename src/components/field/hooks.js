@@ -1,8 +1,10 @@
 import { useStore } from "effector-react";
 import { useEffect } from "react";
 import { $difficulty } from "../../model/model";
+import { useAudio } from "../audio";
 import { $foodPos, onFoodPosChange } from "../food/model";
 import {
+  $gameStarted,
   $keyDown,
   $snakePos,
   onKeyDownChange,
@@ -49,4 +51,14 @@ export const useKeyboardListener = () => {
     return () =>
       window.removeEventListener("keydown", (event) => cb(event.key), false);
   }, []);
+};
+
+export const useGameStarted = () => {
+  const gameStarted = useStore($gameStarted);
+  const { toggle } = useAudio("/main.mp3", 0.4);
+
+  useEffect(() => {
+    console.log(gameStarted);
+    gameStarted && toggle();
+  }, [gameStarted]);
 };

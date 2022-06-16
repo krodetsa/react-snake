@@ -87,3 +87,16 @@ export const $keyDown = createStore("").on(onKeyDownChange, (store, state) => {
   }
   return direction;
 });
+
+export const onGameStartedChange = createEvent();
+export const onGameReset = createEvent();
+export const $gameStarted = createStore(false)
+  .on(onKeyDownChange, (store) => {
+    let result = true;
+    if (store === result) {
+      return store;
+    } else {
+      return result;
+    }
+  })
+  .reset(onGameReset);

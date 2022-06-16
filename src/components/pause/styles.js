@@ -18,6 +18,7 @@ export const StyledPauseText = styled.div`
   position: relative;
   transform: translateX(5px, 3px);
   animation: move 0.8s infinite;
+  cursor: pointer;
   & p {
     color: var(--font);
     text-align: center;

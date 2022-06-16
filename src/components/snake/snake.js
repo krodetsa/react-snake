@@ -5,6 +5,7 @@ import { useMemo } from "react";
 
 const Snake = () => {
   const position = useStore($snakePos);
+
   const snake = useMemo(
     () =>
       position.map((el, i) => (

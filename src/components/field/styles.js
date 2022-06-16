@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const StyledField = styled.div`
+  z-index: 5;
   width: 600px;
   height: 600px;
-  background-color: #1b1e23;
+  background-color: #1a1e23;
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 1px 0px var(--lightblue), 0 0 5px 6px var(--middblue),
